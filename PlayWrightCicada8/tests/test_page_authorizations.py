@@ -63,7 +63,7 @@ def test_password_recovery(page: Page):
 
         # Нажимаем кнопку "Забыли пароль?"
         logging.info("Clicking 'Forgot Password' link")
-        forgot_password_selector = 'a[href="/password-recovery"]'  # Исправленный селектор
+        forgot_password_selector = 'a[href="/password-recovery"]'
         page.locator(forgot_password_selector).wait_for(state="visible", timeout=10000)
         page.click(forgot_password_selector)
 
