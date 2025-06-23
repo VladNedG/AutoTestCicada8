@@ -175,7 +175,7 @@ def test_password_recovery(page: Page):
         page.click('button[type="submit"]')
 
         # Ожидаем редирект
-        page.wait_for_url("https://cicada.develop.apt.lan/statistics?current_screen=dashboard", timeout=10000)
+        page.wait_for_url("https://cicada.develop.apt.lan/monitoring?current_screen=dashboard", timeout=10000)
 
         # Проверяем наличие элемента, подтверждающего авторизацию
         logging.info("Checking for authorization success")
