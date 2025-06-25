@@ -16,7 +16,7 @@ def test_null_password(page: Page):
         # Переходим на страницу логина
         logging.info("Navigating to login page")
         page.goto("https://cicada.develop.apt.lan/")
-        page.wait_for_load_state("load")
+        page.wait_for_load_state("load", timeout=10000)
 
         # Получаем учетные данные из переменных окружения
         logging.info("Retrieving credentials from environment variables")
@@ -32,7 +32,7 @@ def test_null_password(page: Page):
 
         # Нажимаем кнопку входа
         logging.info("Clicking submit button")
-        page.locator('button[type="submit"]').wait_for(state="visible")
+        page.locator('button[type="submit"]').wait_for(state="visible", timeout=10000)
         page.click('button[type="submit"]')
 
         # Проверяем, что редирект не произошел
